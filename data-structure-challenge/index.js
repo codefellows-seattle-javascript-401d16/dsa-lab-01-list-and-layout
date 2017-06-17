@@ -27,10 +27,9 @@ class List {
   map(callback){
     let result = new List();
     for(let i = 0; i < this.length; i++){
-      result.push(callback(i));
-    console.log(result);
-    return result;
+      result.push(callback(i+1));
     }
+    return result;
   }
 
 // TODO: Add filter method to the constructor
@@ -51,6 +50,7 @@ let list = new List();
 list.push(1);
 list.push(2);
 list.push(3);
+
 let result = list.map(callback);
 
 
