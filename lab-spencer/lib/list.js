@@ -1,17 +1,14 @@
 'use strict';
 
-let list = module.exports = {};
-
-function List() {
+let List = module.exports = function List() {
   this.length = 0;
-}
-
-list.List = List;
+};
 
 List.prototype.push = function(val) {
-  if(!val) return;
+  if(!val) return this.length;
   this[this.length] = val;
   this.length++;
+  return this.length;
 };
 
 List.prototype.pop = function() {
@@ -32,17 +29,15 @@ List.prototype.reduce = function(callback, initial) {
     accumulator = this[0];
     i = 1;
   }
-  for(i; i < this.length; i++) {
+  for(i; i < this.length; i++)
     accumulator = callback(accumulator, this[i], i);
-  }
   return accumulator;
 };
 
 List.prototype.map = function(callback) {
   let result = new List();
-  for(let i = 0; i < this.length; i++) {
+  for(let i = 0; i < this.length; i++)
     result.push(callback(this[i]));
-  }
   return result;
 };
 
@@ -56,19 +51,16 @@ List.prototype.filter = function(callback) {
 };
 
 List.prototype.slice = function(start, end) {
-  let result = new List(), i;
-  if(start) {
+  let i, result = new List();
+  if(start)
     i = start < 0 ? this.length - Math.abs(start) : start;
-  } else {
+  else
     i = 0;
-  }
-  if(end) {
+  if(end)
     end = end < 0 ? this.length - Math.abs(end) : end;
-  } else {
+  else
     end = this.length;
-  }
-  for(i; i < end; i++) {
+  for(i; i < end; i++)
     result.push(this[i]);
-  }
   return result;
 };
