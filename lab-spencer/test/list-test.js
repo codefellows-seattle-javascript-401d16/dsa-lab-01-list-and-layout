@@ -125,4 +125,52 @@ describe('List Object', () => {
       expect(filtered).toEqual({length: 0});
     });
   });
+
+  describe('Slice', () => {
+    it('Should return a list of 3, \'hey\', \'no\'', () => {
+      let list = new List();
+      list.push('suuup');
+      list.push(3);
+      list.push('hey');
+      list.push('no');
+      list.push(22);
+      list.push({});
+      expect(list).toEqual({0: 'suuup', 1: 3, 2: 'hey', 3: 'no', 4: 22, 5: {}, length: 6});
+      let sliced = list.slice(1, 4);
+      expect(list).toEqual({0: 'suuup', 1: 3, 2: 'hey', 3: 'no', 4: 22, 5: {}, length: 6});
+      expect(sliced).toEqual({0: 3, 1: 'hey', 2: 'no', length: 3});
+    });
+    it('Should return a list from the second to last to the end 22, {}', () => {
+      let list = new List();
+      list.push('suuup');
+      list.push('hey');
+      list.push('no');
+      list.push(22);
+      list.push({});
+      expect(list).toEqual({0: 'suuup', 1: 'hey', 2: 'no', 3: 22, 4: {}, length: 5});
+      let sliced = list.slice(-2);
+      expect(list).toEqual({0: 'suuup', 1: 'hey', 2: 'no', 3: 22, 4: {}, length: 5});
+      expect(sliced).toEqual({0: 22, 1: {}, length: 2});
+    });
+    it('Should return second item to 2nd to last item', () => {
+      let list = new List();
+      list.push('suuup');
+      list.push(3);
+      list.push('hey');
+      list.push('no');
+      list.push(22);
+      list.push({});
+      expect(list).toEqual({0: 'suuup', 1: 3, 2: 'hey', 3: 'no', 4: 22, 5: {}, length: 6});
+      let sliced = list.slice(1, -1);
+      expect(list).toEqual({0: 'suuup', 1: 3, 2: 'hey', 3: 'no', 4: 22, 5: {}, length: 6});
+      expect(sliced).toEqual({0: 3, 1: 'hey', 2: 'no', 3: 22, length: 4});
+    });
+    it('Should return an empty list', () => {
+      let list = new List();
+      expect(list).toEqual({length: 0});
+      let sliced = list.slice(15, -5);
+      expect(list).toEqual({length: 0});
+      expect(sliced).toEqual({length: 0});
+    });
+  });
 });
