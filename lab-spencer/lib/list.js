@@ -9,17 +9,21 @@ function List() {
 list.List = List;
 
 List.prototype.push = function(val) {
+  if(!val) return;
   this[this.length] = val;
   this.length++;
 };
 
 List.prototype.pop = function() {
+  if(!this.length) return;
   let result = this[this.length - 1];
   this[this.length - 1] = undefined;
+  this.length--;
   return result;
 };
 
 List.prototype.reduce = function(callback, initial) {
+  if(!this.length) throw new Error('TypeError: Reduce of empty list with no initial value');
   let i, accumulator;
   if(initial) {
     accumulator = initial;
@@ -59,7 +63,7 @@ List.prototype.slice = function(start, end) {
     i = 0;
   }
   if(end) {
-    end = end < 0 ? this.length - Math.abs(start) : start;
+    end = end < 0 ? this.length - Math.abs(end) : end;
   } else {
     end = this.length;
   }
