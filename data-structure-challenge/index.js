@@ -54,19 +54,14 @@ class List {
   }
 
 // TODO: Add slice method to the constructor
+
+  slice(begin, end){
+    let beginSlice = (typeof begin === 'undefined') ? 0 : begin;
+    let endSlice = (typeof end === 'undefined') ? this.length : end;
+    let result = new List();
+    for(let i = beginSlice; i < endSlice; i++){
+      result.push(this[i]);
+    }
+    return result;
+  }
 }
-
-let callback = function(a, b){
-  return a - b;
-}
-
-let list = new List();
-list.push(1);
-list.push(2);
-list.push(3);
-
-let result = list.reduce(callback);
-
-
-console.log(list);
-console.log(result);
