@@ -1,6 +1,6 @@
 'use strict';
 
-let List = require('../lib/test.js');
+let List = require('../lib/list.js');
 let expect = require('expect');
 
 describe('List Object', () => {
