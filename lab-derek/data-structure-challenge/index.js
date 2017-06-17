@@ -2,7 +2,7 @@
 
 // TODO: Create a List constructor that is a replacement for Arrays
 
-class List {
+module.exports = class List {
   constructor() {
     this.length = 0;
   };
