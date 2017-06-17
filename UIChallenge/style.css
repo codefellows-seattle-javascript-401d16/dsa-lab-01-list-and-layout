@@ -1,0 +1,76 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  border: 1px solid black;
+  outline: none;
+  width: 100%
+}
+
+clear-fix{
+  clear: both;
+}
+
+html, body{
+  height: 100%;
+}
+
+.page-header{
+  height: 10%;
+  background-color: rgb(127,238,176);
+  float: left;
+}
+
+.main{
+  height: 80%;
+  background-color: rgb(106,177,252);
+  width: 50%;
+  float: left;
+}
+
+.inner-main{
+  height: 100%;
+  background-color: rgb(233,181,181);
+  width: 50%;
+  float: left;
+}
+
+.pic{
+  height: 50%;
+  background-color: rgb(255,249,92);
+}
+
+.tweet-1{
+  height: 25%;
+  background-color: rgb(254,185,119);
+}
+
+.tweet-2{
+  height: 25%;
+  background-color: rgb(31,205,46);
+}
+
+.page-footer{
+  height: 10%;
+  background-color: red;
+  float: left;
+}
+
+.footer-darker-blue{
+  width: calc(100%/3);
+  height: 100%;
+  background-color: rgb(132,215,253);
+  float: left;
+}
+
+.footer-lighter-blue{
+  width: calc(100%/3);
+  height: 100%;
+  background-color: rgb(39,228,247);
+  float: left;
+}
