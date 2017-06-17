@@ -34,6 +34,14 @@ class List {
 
 // TODO: Add filter method to the constructor
 
+filter(callback){
+  let result = new List();
+  for(let i = 0; i < this.length; i++){
+    if (callback(this[i]) === true)
+    result.push(this[i]);
+  }
+  return result;
+}
 
 // TODO: Add reduce method to the constructor
 
@@ -42,8 +50,7 @@ class List {
 }
 
 let callback = function(item){
-  item = item * 2;
-  return item;
+  return item > 1;
 }
 
 let list = new List();
@@ -51,7 +58,7 @@ list.push(1);
 list.push(2);
 list.push(3);
 
-let result = list.map(callback);
+let result = list.filter(callback);
 
 
 console.log(list);
