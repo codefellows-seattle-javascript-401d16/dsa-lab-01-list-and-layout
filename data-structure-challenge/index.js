@@ -34,23 +34,30 @@ class List {
 
 // TODO: Add filter method to the constructor
 
-filter(callback){
-  let result = new List();
-  for(let i = 0; i < this.length; i++){
-    if (callback(this[i]) === true)
-    result.push(this[i]);
+  filter(callback){
+    let result = new List();
+    for(let i = 0; i < this.length; i++){
+      if (callback(this[i]) === true)
+      result.push(this[i]);
+    }
+    return result;
   }
-  return result;
-}
 
 // TODO: Add reduce method to the constructor
 
+  reduce(callback, initialValue){
+    let acc = (typeof initialValue === 'undefined') ? this[0]: initialValue + this[0];
+    for(let i = 1; i < this.length; i++){
+      acc = callback(acc, this[i]);
+    }
+    return acc;
+  }
 
 // TODO: Add slice method to the constructor
 }
 
-let callback = function(item){
-  return item > 1;
+let callback = function(a, b){
+  return a - b;
 }
 
 let list = new List();
@@ -58,7 +65,7 @@ list.push(1);
 list.push(2);
 list.push(3);
 
-let result = list.filter(callback);
+let result = list.reduce(callback);
 
 
 console.log(list);
