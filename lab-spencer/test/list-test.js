@@ -47,6 +47,34 @@ describe('List Object', () => {
     });
   });
 
+  describe('Reduce', () => {
+    it('Should return 35', () => {
+      let list = new List();
+      list.push(21);
+      list.push(4);
+      list.push(10);
+      expect(list).toEqual({0: 21, 1: 4, 2: 10, length: 3});
+      let result = list.reduce((accumulator, next) => accumulator + next);
+      expect(list).toEqual({0: 21, 1: 4, 2: 10, length: 3});
+      expect(result).toEqual(35);
+    });
+    it('Should return 50 (because initial === 15)', () => {
+      let list = new List();
+      list.push(21);
+      list.push(4);
+      list.push(10);
+      expect(list).toEqual({0: 21, 1: 4, 2: 10, length: 3});
+      let result = list.reduce((accumulator, next) => accumulator + next, 15);
+      expect(list).toEqual({0: 21, 1: 4, 2: 10, length: 3});
+      expect(result).toEqual(50);
+    });
+    it('Should throw \'TypeError: Reduce of empty list with no initial value\'', () => {
+      let list = new List();
+      expect(list).toEqual({length: 0});
+      expect(() => list.reduce((accumulator, next) => accumulator + next)).toThrow(Error, 'TypeError: Reduce of empty list with no initial value');
+    });
+  });
+
   describe('Map', () => {
     it('Should return a new list of the same size with the string dog added to each value', () => {
       let list = new List();
@@ -64,4 +92,5 @@ describe('List Object', () => {
       expect(mapped).toEqual({length: 0});
     });
   });
+
 });
