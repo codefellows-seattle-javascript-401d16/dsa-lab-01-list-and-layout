@@ -90,9 +90,24 @@ describe('testing list', () => {
       expect(result).toEqual([2, 3]);
       expect(result.length).toBe(2);
 
-      list = ['apple','pear','orange'];
-      result = list.filter((x)=> x.length > 4);
-      expect(result).toEqual(['apple', 'orange']);
+      list = ['apple','pear','bananna'];
+      result = list.filter((x)=> x.length > 6);
+      expect(result).toEqual(['bananna']);
+      expect(result.length).toBe(1);
+    });
+  });
+
+  describe('test slice', () => {
+    it('should return a filtered array', () => {
+      let list = [1,2,3,4,5];
+      let result = list.slice(1,4);
+      expect(result).toEqual([2,3,4]);
+      expect(result.length).toBe(3);
+
+      list = ['apple','pear','orange','bananna'];
+      result = list.slice(2);
+      expect(result).toEqual(['orange', 'bananna']);
+      expect(result.length).toBe(2);
     });
   });
 });

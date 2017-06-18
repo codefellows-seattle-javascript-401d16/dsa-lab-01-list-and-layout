@@ -41,7 +41,13 @@ List.prototype.filter = function(callback){
   }
   return list;
 };
-//
-// List.prototype.slice = function(callback){
-//   let list = new List();
-// };
+
+List.prototype.slice = function(begin, end){
+  let list = new List();
+  // begin === undefined ? begin = 0 : begin;
+  // end === undefined ? end = this.length : end;
+  for (let i = begin; i < this[end]; i++) {
+    list.push(this[i]);
+  }
+  return list;
+};
