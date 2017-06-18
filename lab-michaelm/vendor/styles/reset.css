@@ -16,6 +16,15 @@ html, body {
   height: 100%;
 }
 
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float:left;
+}
+  
 .clearfix {
   clear: both;
 }
