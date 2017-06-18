@@ -1,3 +1,4 @@
+/*globals*/
 .float-right {
   float: right;
 }
@@ -11,18 +12,7 @@
 
 }
 
-.header {
-  outline: 1px solid black;
-  width: 100%;
-  height: 15%;
-  background-color: #7AEEAE;
-}
-
-.main {
-  outline: 1px solid red;
-  width: 100%;
-  height: 70%;
-}
+/*main*/
 
 .main-left-content {
   outline: 1px solid yellow;
@@ -81,11 +71,7 @@
   background-color: #00CE1F;
 }
 
-.footer {
-  outline: 1px solid black;
-  width: 100%;
-  height: 15%;
-}
+/*footer*/
 
 .left-foot {
   outline: 1px solid black;
