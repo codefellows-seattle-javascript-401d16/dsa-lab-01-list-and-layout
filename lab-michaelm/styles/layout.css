@@ -8,4 +8,102 @@
 
 .clearfix {
   clear: both;
+
+}
+
+.header {
+  outline: 1px solid black;
+  width: 100%;
+  height: 15%;
+  background-color: #7AEEAE;
+}
+
+.main {
+  outline: 1px solid red;
+  width: 100%;
+  height: 70%;
+}
+
+.main-left-content {
+  outline: 1px solid yellow;
+  width: 50%;
+  height: 100%;
+  background-color: #66AFFF;
+}
+
+.main-right-content {
+  outline: 1px solid blue;
+  width: 50%;
+  height: 100%;
+}
+
+.main-right-left-content {
+  outline: 1px solid black;
+  width: 50%;
+  height: 100%;
+  background-color: #EAB4B4;
+}
+
+.main-right-right-content {
+  outline: 1px solid black;
+  width: 50%;
+  height: 100%;
+}
+
+.top-right-content {
+  outline: 1px solid black;
+  width: 100%;
+  height: 50%;
+  float: none;
+  background-color: #FFFB4B;
+}
+
+.bottom-right-content {
+  outline: 1px solid black;
+  width: 100%;
+  height: 50%;
+  float: none;
+}
+
+.top-bottom-right-content {
+  outline: 1px solid black;
+  width: 100%;
+  height: 50%;
+  float: none;
+  background-color: #FFB970;
+}
+
+.bottom-bottom-right-content {
+  outline: 1px solid black;
+  width: 100%;
+  height: 50%;
+  float: none;
+  background-color: #00CE1F;
+}
+
+.footer {
+  outline: 1px solid black;
+  width: 100%;
+  height: 15%;
+}
+
+.left-foot {
+  outline: 1px solid black;
+  width: calc(100%/3);
+  height: 100%;
+  background-color: #80D4FF;
+}
+
+.middle-foot {
+  outline: 1px solid black;
+  width: calc(100%/3);
+  height: 100%;
+  background-color: #80D4FF;
+}
+
+.right-foot {
+  outline: 1px solid black;
+  width: calc(100%/3);
+  height: 100%;
+  background-color: #00E3F8;
 }
