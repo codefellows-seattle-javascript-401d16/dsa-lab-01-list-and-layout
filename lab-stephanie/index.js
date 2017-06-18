@@ -33,9 +33,9 @@ List.prototype.filter = function(arg) {
   } return result;
 };
 
-// List.prototype.reduce = function(callback) {
-//
-// };
+List.prototype.reduce = function(callback) {
+
+};
 
 List.prototype.slice = function(arg, args) {
   let result = [];

@@ -62,18 +62,18 @@ describe('testing list', () => {
   });
 
   describe('testing filter', () => {
-
     it('should return an array that only contains 1\'s', () => {
-      let list = ['cat', 'coffee', '1', 1, 1];
+      let list = new List;
+      list = ['cat', 'coffee', '1', 1, 1];
       expect(list.filter(1)).toEqual(['1',1,1]);
     });
   });
 
   describe('testing slice', () => {
-
-    it('should return [1,2]');
-    let list = [0,1,2,3,4];
-    expect(list.slice(1,3)).toEqual([1,2]);
+    it('should return [1,2]', () => {
+      let list = new List;
+      list = [0,1,2,3,4];
+      expect(list.slice(1,3)).toEqual([1,2]);
+    });
   });
-
 });
