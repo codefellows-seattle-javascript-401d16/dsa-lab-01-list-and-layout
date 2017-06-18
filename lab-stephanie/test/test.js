@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('expect');
-const List = require('../list.js');
+const List = require('../index.js');
 
 describe('testing list', () => {
   it('should have a lenth of zero', () => {
@@ -71,9 +71,9 @@ describe('testing list', () => {
 
   describe('testing slice', () => {
 
-    it('should return [1,2,3]');
+    it('should return [1,2]');
     let list = [0,1,2,3,4];
-    expect(list.slice(1,3)).toEqual([1,2,3]);
+    expect(list.slice(1,3)).toEqual([1,2]);
   });
 
 });
