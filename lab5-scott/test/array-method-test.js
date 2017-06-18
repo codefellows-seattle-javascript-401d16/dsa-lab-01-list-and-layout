@@ -41,3 +41,15 @@ describe('testing array-method module', () => {
     });
   });
 });
+
+// start of map testing
+describe('test map', () => {
+  it('it should return {0: 2, 1: 4, 3: 6}', =>{
+    let list = new List();
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    let result = list.map(list, callback);
+
+  });
+});
