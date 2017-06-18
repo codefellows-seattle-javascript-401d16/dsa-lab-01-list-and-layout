@@ -17,18 +17,31 @@ List.prototype.pop = function(){
   return result;
 };
 
-List.prototype.reduce = function(acc, val){
-    if (this.length < 1) return;
+List.prototype.reduce = function(callback, initialValue){
+  let acc = (initialValue === undefined) ? this[0]: initialValue + this[0];
+  for (let i = 1 ; i < this.length; i++) {
+    acc = callback(acc, this[i]);
+  }
+  return acc;
 };
 
-// List.prototype.map = function(callback){
+List.prototype.map = function(callback){
+  let list = new List();
+  for (var i = 0; i < this.length; i++) {
+    list.push(callback(this[i]));
+  }
+  return list;
+};
 
-// };
-
-// List.prototype.filter = function(callback){
-
-// };
-
+List.prototype.filter = function(callback){
+  let list = new List();
+  for (var i = 0; i < this.length; i++) {
+    if (callback(this[i]))
+      list.push(this[i]);
+  }
+  return list;
+};
+//
 // List.prototype.slice = function(callback){
-
+//   let list = new List();
 // };
