@@ -1,0 +1,19 @@
+{
+  "name": "dsa-lab-01-list-and-layout",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) dsa-lab-01-list-and-layout ====== ## To Submit this Assignment #### UI Challenge * create a codepen and submit a link",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandakoster/dsa-lab-01-list-and-layout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amandakoster/dsa-lab-01-list-and-layout/issues"
+  },
+  "homepage": "https://github.com/amandakoster/dsa-lab-01-list-and-layout#readme"
+}

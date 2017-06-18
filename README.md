@@ -2,7 +2,7 @@
 ======
 ## To Submit this Assignment
 #### UI Challenge
-* create a codepen and submit a link 
+* create a codepen and submit a link
 
 #### DATA STRUCTURE CHALLENGE
   * fork this repository
@@ -13,11 +13,11 @@
   * write a question and observation on canvas
 
 ## Configuration
-* README.md
-* .gitignore
-* .eslint
-* .eslintrc
-* .package.json
+* README.md -done
+* .gitignore -done
+* .eslint -done
+* .eslintrc -done
+* .package.json -done
 
 ## Feature Tasks
 #### UI CHALLENGE
@@ -30,9 +30,8 @@
 # Documentation
 * Write a description on your code in your readme
 
-## Test 
+## Test
 * Test the list constructor and all of its methods
 
 ## Bonus 2pts
 * Implement map and filter using reduce
-
