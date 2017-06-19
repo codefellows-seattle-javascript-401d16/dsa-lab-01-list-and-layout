@@ -39,12 +39,14 @@ List.prototype.filter = function(arg) {
   } return result;
 };
 
-// List.prototype.reduce  = function( callback, val) {
-// let i = result;
-// if (val) {
-//   let i = val;
-//   } else {
-//   i = 0;
-//   }
-// for(i; i < this.length; i++)
-// };
+List.prototype.reduce  = function( callback, val) {
+  let i = result;
+  if (val) {
+    let i = val;
+  } else {
+    i = 0;
+  }
+  for (i; i < this.length; i++)
+    result = callback(result, this[i]);
+  } return result;
+};
