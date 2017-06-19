@@ -31,6 +31,10 @@ List.prototype.reduce = (callback, value) => {
 };
 
 List.prototype.slice = (start, end) =>
+  if (start == undefined) { start = 0; };
+  if (end == undefined) { end = this.length - 1; };
+  if (end < 0) { end = this.length - end; };
+  if (start < this.length && end <= this.length + 1 && start < end)
   this.reduce((a, b) => {
     for (var i = start; i < end; i++) {
       return a.push(b);
@@ -39,9 +43,9 @@ List.prototype.slice = (start, end) =>
 
 List.prototype.filter = (callback) =>
   this.reduce((a, b) => {
-    if (callback(b) == undefined)
+    if (callback(b) == false)
       return a;
-    return a.push(callback(b));
+    return a.push(b);
 
   }, []);
 
