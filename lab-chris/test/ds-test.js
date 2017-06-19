@@ -56,20 +56,6 @@ describe('testing list', () => {
     });
   });
 
-  describe('test reduce', () => {
-    it('should reduce an array to one value', () => {
-      let list = [1,2,3];
-      let result = list.reduce((acc, val) => acc + val);
-      expect(result).toEqual(6);
-      expect(result.length).toBe(undefined);
-
-      list = ['apple','pear','orange'];
-      result = list.reduce((acc, val) => acc + val,10);
-      expect(result).toEqual('10applepearorange');
-      expect(result.length).toBe(17);
-    });
-  });
-
   describe('test map', () => {
     it('should return an altered array', () => {
       let list = [1,2,3];
