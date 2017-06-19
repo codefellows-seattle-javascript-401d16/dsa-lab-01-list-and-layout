@@ -53,3 +53,15 @@ describe('test map', () => {
     expect(multiplyByTwo).toEqual({0: 2, 1: 4, 2: 6, length: 3});
   });
 });
+
+//start of filter testing
+describe('test filter', () => {
+  it('it should return {2: 6, length: 1}', () => {
+    let list = new List();
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    let filterGreaterThan4 = list.filter(item => item < 4);
+    expect(filterGreaterThan4).toEqual({2: 6, length: 1});
+  });
+});

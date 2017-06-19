@@ -24,3 +24,12 @@ List.prototype.map = function(callback){
   }
   return result;
 };
+
+List.prototype.filter = function(callback){
+  let result = new List();
+  for (var i = 0; i < this.length; i++) {
+    delete callback(this[i]);
+    result.push(callback(this[i]));
+  }
+  return result;
+};
