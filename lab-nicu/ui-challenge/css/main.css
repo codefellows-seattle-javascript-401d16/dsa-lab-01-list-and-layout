@@ -1,0 +1,90 @@
+/* reset */ 
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  width: 100%;
+} 
+
+html, body {
+  height: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.app-header {
+  height: 10%;
+  background-color: teal;
+  border: 1px solid black;
+  float: left;
+}
+
+.app-content {
+  height: 80%;
+  width: 50%;
+  border: 1px solid black;
+  float: left;
+  background-color: lightblue;
+}
+
+.app-aside {
+  height: 80%;
+  width: 25%;
+  float: left; 
+  border: .25px solid black;
+}
+
+.app-main {
+  height: 80%;
+  width: 25%;
+  float: left;
+  background-color: pink;
+  border: 1px dotted orange;
+  overflow: scroll;
+}
+
+.collection-item {
+  width: calc((100% / 3) - 0.5em);
+  height: 100px;
+  margin: 0.25em;
+  float: left;
+  border: 1px solid black;
+}
+
+.app-footer {
+  height: 10%;
+  border: 1px dotted green;
+  float: left;
+}
+
+.app-aside-featured-item{
+  height: 50%;
+  background-color: yellow;
+  border: .25px solid black;
+}
+
+.app-aside-second-item{
+  height: 25%;
+  background-color: orange;
+}
+
+.app-aside-third-item{
+  height: 25%;
+  background-color: green;
+}
+
+.app-footer-item{
+  height: 100%;
+  float:left;
+  width: calc(100% * (1/3));
+  background-color: lightskyblue;
+  border: 1px dotted black;
+}
