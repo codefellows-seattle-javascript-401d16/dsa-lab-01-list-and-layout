@@ -17,20 +17,10 @@ List.prototype.pop = function(){
   return result;
 };
 
-List.prototype.map = function(list, callback){
-  let newList = {};
-  newList[this.length] =
-  let result =
-  callback(result);
-};
-
-let callback = (propertyName, propertyValue) => {
-  let propertyName = this.length;
-  for (var i = 0    let callback = () => {
-      for (var i = 0; i < this.length; i++) {
-        this[i] =
-      }
-    }; i < this.length; i++) {
-    this[i] =
+List.prototype.map = function(callback){
+  let result = new List();
+  for (var i = 0; i < this.length; i++) {
+    (callback(this[i]));
   }
+  return result;
 };
