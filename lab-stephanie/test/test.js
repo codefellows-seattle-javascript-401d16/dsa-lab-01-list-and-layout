@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('expect');
-const List = require('../index.js');
+let List = require('../index.js');
 
 describe('testing list', () => {
   it('should have a lenth of zero', () => {
@@ -62,17 +62,51 @@ describe('testing list', () => {
   });
 
   describe('testing filter', () => {
-    it('should return an array that only contains 1\'s', () => {
+    it('should return an array that passes the callback', () => {
+      function greaterThanTwo(n) {
+        return n > 2;
+      }
       let list = new List;
-      list = ['cat', 'coffee', '1', 1, 1];
-      expect(list.filter(1)).toEqual(['1',1,1]);
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(4);
+      let result = list.filters(greaterThanTwo);
+      expect(result).toEqual([3,4]);
+    });
+    it('should return an array of strings', () => {
+      function stringArray(str) {
+        if (str === 'Bob') return str;
+      }
+      let list = new List;
+      list.push('Bob');
+      list.push('Edward');
+      list.push('Katie');
+      list.push('Jerry');
+      let result = list.filters(stringArray);
+      expect(result).toEqual(['Bob']);
+    });
+  });
+
+  describe('testing reduce', () => {
+    it('should return CAT', () => {
+      let list = new List;
+      list.push('c');
+      list.push('a');
+      list.push('t');
+      let result = list.reduces((a,c) => a.toUpperCase() + c.toUpperCase());
+      expect(result).toEqual('CAT');
     });
   });
 
   describe('testing slice', () => {
     it('should return [1,2]', () => {
       let list = new List;
-      list = [0,1,2,3,4];
+      list.push(0);
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(4);
       expect(list.slice(1,3)).toEqual([1,2]);
     });
   });

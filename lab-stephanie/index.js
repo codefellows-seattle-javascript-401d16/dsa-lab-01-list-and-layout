@@ -25,16 +25,20 @@ List.prototype.map = function(callback){
   } return result;
 };
 
-List.prototype.filter = function(arg) {
+List.prototype.filter = function(callback) {
   let result = [];
   for (var i = 0; i <this.length; i++) {
-    if(arg === this[i])
+    if(callback[i])
       result.push(this[i]);
   } return result;
 };
 
-List.prototype.reduce = function(callback) {
-
+List.prototype.reduces = function(callback, arg) {
+  let i, result;
+  (arg) ? i = arg : i = 0;
+  for (i; i < this.length; i++) {
+    result = callback(result, this[i]);
+  } return result;
 };
 
 List.prototype.slice = function(arg, args) {
