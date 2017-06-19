@@ -8,14 +8,14 @@ list.List = function() {
 
 list.List.prototype.push = function(data) {
   this[this.length] = data;
-  this.length ++;
+  this.length++;
 };
 
 list.List.prototype.pop = function() {
-  let value = this[this.length - 1];
+  let result = this[this.length - 1];
   delete this[this.length - 1];
-  this.length --;
-  return value;
+  this.length--;
+  return result;
 };
 
 list.List.prototype.map = function(callback) {
