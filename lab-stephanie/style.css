@@ -1,0 +1,78 @@
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  width: 100%;
+  border: 1px solid black;
+
+}
+
+html, body {
+  height: 100%;
+
+}
+.clear-fix {
+  clear: both;
+}
+.app-header {
+  float: left;
+  height: 10%;
+  background-color: #00FA9A;
+}
+.app-article {
+  height: 80%;
+  width: 50%;
+  float: left;
+  background-color: #1E90FF;
+}
+.app-aside {
+  height: 80%;
+  width: calc(50% / 2);
+  float: left;
+}
+.aside-article {
+  height: 50%;
+  width: 100%;
+  background-color: yellow;
+}
+#orange {
+  height: calc(50% /2);
+  width: 100%;
+  background-color: #FFA500;
+}
+#green {
+  height: calc(50% /2);
+  width: 100%;
+  background-color: #00FF00;
+}
+.app-main {
+  height: 80%;
+  width: calc(50% /2);
+  float: left;
+  background-color: #FFB6C1;
+}
+.app-tweet {
+  width: 50%;
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+}
+.cllection-item {
+  width: calc((100%/3) - 0.5em);
+  float: left;
+  height: 20%;
+  margin: 0.25em;
+}
+.app-footer {
+  height: 10%;
+  width: calc(100% /3);
+  float: left;
+  background-color: #00CED1;
+}
