@@ -12,7 +12,7 @@ List.prototype.push = function(value){
 List.prototype.pop = function(){
   if (this.length < 1) return;
   let result = this[this.length - 1];
-  delete this[this.length - 1]
+  delete this[this.length - 1];
   this.length--;
   return result;
 };
@@ -30,7 +30,7 @@ List.prototype.reduce = function(fn,initialVal){
   }
 
   for(let i = start; i < this.length; i++){
-    result = fn(result, this[i]);
+    result = fn(result, this[i], i, this);
   }
   return result;
 };
@@ -38,18 +38,22 @@ List.prototype.reduce = function(fn,initialVal){
 List.prototype.map = function(fn){
   let result = new List();
 
-  for(let i = 0; i < this.length; i++){
-    result.push(fn(this[i]));
-  }
+  result = this.reduce((res, cur) => {
+    res.push(fn(cur));
+    return res;
+  },result);
+
   return result;
 };
 
 List.prototype.filter = function(fn){
   let result = new List();
 
-  for(let i = 0; i < this.length; i++){
-    if(fn(this[i])) result.push(this[i]);
-  }
+  result = this.reduce((res, cur) => {
+    if(fn(cur))
+      res.push(cur);
+    return res;
+  },result);
   return result;
 };
 
