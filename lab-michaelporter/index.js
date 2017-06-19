@@ -17,42 +17,54 @@ List.prototype.pop = function () {
   return result;
 };
 
-List.prototype.reduce = (callback, value) => {
-  let start = 0;
-  let result = 1;
-  if (!value) {
-    result = this[0];
+List.prototype.reduce = function(callback, value) {
+  let start;
+  let result;
+  if (value) {
+    start = 0;
+    result = value;
+  } else {
     start = 1;
+    result = this[0];
   }
-  for (var i = start; i < this.length; i++) {
-    result = callback(result, this[i]);
+  for (let i = start; i < this.length; i++) {
+    result = callback(result, this[i], i, this);
   }
   return result;
 };
 
-List.prototype.slice = (start, end) => {
-  if (typeof start === 'undefined') { start = 0; }
-  if (typeof end === 'undefined') { end = this.length - 1; }
-  if (end < 0) { end = this.length - end; }
-  if (start < this.length && end <= this.length + 1 && start < end) {
-    this.reduce((a, b) => {
-      for (var i = start; i < end; i++) {
-        return a.push(b);
-      }
-    }, []);
+List.prototype.slice = function(start, end) {
+  start = start ? start : 0;
+  end = end ? end : this.length;
+  if (start < 0) {
+    end = this.length + start;
+    start = 0;
   }
+  if (end < 0) { end = this.length + end; }
+  let res = new List();
+  if (start < this.length && end <= this.length + 1 && start < end) {
+    for (let i = start; i < end; i++) {
+      res.push(this[i]);
+    }
+  }
+  return res;
 };
 
-List.prototype.filter = (callback) =>
-  this.reduce((a, b) => {
-    if (callback(b) == false)
-      return a;
-    return a.push(b);
+List.prototype.filter = function(callback) {
+  let result = new List();
+  result = this.reduce((acc, cur) => {
+    if (callback(cur))
+      acc.push(cur);
+    return acc;
+  }, result);
+  return result;
+};
 
-  }, []);
-
-
-List.prototype.map = (callback) =>
-  this.reduce((a, b) => {
-    return a.push(callback(b));
-  }, []);
+List.prototype.map = function(callback) {
+  let res = new List();
+  res = this.reduce((acc, cur) => {
+    acc.push(callback(cur));
+    return acc;
+  }, res);
+  return res;
+};
