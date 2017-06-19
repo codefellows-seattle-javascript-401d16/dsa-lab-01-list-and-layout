@@ -30,16 +30,19 @@ List.prototype.reduce = function(callback, initial) {
 
 List.prototype.map = function(callback) {
   if(!this.length) return this;
-  return this.reduce((acc, cur) => acc.push(callback(cur)) ? acc : null, new List());
+  return this.reduce((acc, cur) => {
+    acc.push(callback(cur));
+    return acc;
+  }, new List());
 };
 
 List.prototype.filter = function(callback) {
-  let result = new List();
-  for(let i = 0; i < this.length; i++) {
-    if(callback(this[i]))
-      result.push(this[i]);
-  }
-  return result;
+  if(!this.length) return this;
+  return this.reduce((acc, cur) => {
+    if(callback(cur))
+      acc.push(cur);
+    return acc;
+  }, new List());
 };
 
 List.prototype.slice = function(start, end) {
