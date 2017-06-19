@@ -45,31 +45,32 @@ describe('testing list', () => {
       let divide = function(x) {
         return x/2;
       };
-    });
 
-    it ('should return an array divided by 2', () => {
-      let list = new List();
-      list.push(2);
-      list.push(4);
-      list.push(6);
-      let result = list.map(divide);
-      expect(result).toEqual([1,2,3]);
+      it ('should return an array divided by 2', () => {
+        let list = new List();
+        list.push(2);
+        list.push(4);
+        list.push(6);
+        let result = list.map(divide);
+        expect(result).toEqual([1,2,3]);
+      });
     });
 
     describe('testing slice' , () => {
       let divide = function(x) {
         return x/2;
       };
+
+      it ('should return a portion of an array', () => {
+        let list = new List();
+        list.push(2);
+        list.push(4);
+        list.push(6);
+
+        let result = list.map(divide);
+        expect(result).toEqual([1,2,3]);
+      });
     });
 
-    it ('should return a portion of an array', () => {
-      let list = new List();
-      list.push(2);
-      list.push(4);
-      list.push(6);
-
-      let result = list.map(divide);
-      expect(result).toEqual([1,2,3]);
-    });
   });
 });
