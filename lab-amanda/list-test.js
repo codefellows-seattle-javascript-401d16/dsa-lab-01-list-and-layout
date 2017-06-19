@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('expect');
-const List = require('../list.js');
+const List = require('./list.js');
 
 describe('testing list', () => {
   it('should have a lenth of zero', () => {
@@ -41,7 +41,6 @@ describe('testing list', () => {
       expect(list.length).toEqual(0);
     });
 
-
     describe('testing map' , () => {
       let divide = function(x) {
         return x/2;
@@ -53,7 +52,6 @@ describe('testing list', () => {
       list.push(2);
       list.push(4);
       list.push(6);
-
       let result = list.map(divide);
       expect(result).toEqual([1,2,3]);
     });
