@@ -20,7 +20,7 @@ List.prototype.pop = function(){
 List.prototype.map = function(callback){
   let result = new List();
   for (var i = 0; i < this.length; i++) {
-    (callback(this[i]));
+    result.push(callback(this[i]));
   }
   return result;
 };
