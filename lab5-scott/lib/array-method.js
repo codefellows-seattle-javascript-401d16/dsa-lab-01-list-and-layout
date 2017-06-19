@@ -28,8 +28,15 @@ List.prototype.map = function(callback){
 List.prototype.filter = function(callback){
   let result = new List();
   for (var i = 0; i < this.length; i++) {
-    delete callback(this[i]);
-    result.push(callback(this[i]));
+    if (callback(this[i])) {
+      delete this[i];
+    } else{
+      result.push(this[i]);
+    }
   }
   return result;
 };
+
+List.prototype.reduce = function(){
+  
+}
