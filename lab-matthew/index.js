@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const List = require('./lib/list.js');
 
@@ -10,6 +10,9 @@ let createList = () => {
   return list;
 };
 
-let myList = createList();
-
-console.log('List Initialize/Push', myList);
+console.log('Instantiate new List using push:', createList());
+console.log('Pop:', createList().pop());
+console.log('Map:', createList().map(item => item.toUpperCase()));
+console.log('Filter:', createList().filter(item => item.length < 6));
+console.log('Reduce:', createList().reduce((acc, curr) => acc + curr));
+console.log('Slice:', createList().slice(1));

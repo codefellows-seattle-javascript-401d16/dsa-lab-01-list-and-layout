@@ -1,7 +1,7 @@
 'use strict';
 
 let List = module.exports = function(){
-  this.length =0;
+  this.length = 0;
 };
 
 List.prototype.push = function(value){
