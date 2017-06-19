@@ -17,9 +17,9 @@ List.prototype.pop = function() {
   return result;
 };
 
-List.prototype.map = function(value) {
+List.prototype.map = function(callback) {
   let newList = new List();
-  for (var i = 0; i < this.length; i++) () => newList.push(value(this[i]));
+  for (var i = 0; i < this.length; i++) () => newList.push(callback(this[i]));
   return newList;
 };
 

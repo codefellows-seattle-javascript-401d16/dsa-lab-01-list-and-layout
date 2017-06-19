@@ -33,15 +33,12 @@ describe('Testing list.js.', () => {
 
   describe('Testing map.', () => {
     it('Should return a new mapped list.', () => {
-      var ddd = new List();
-      ddd.push('a');
-      ddd.push('b');
-      ddd.push('c');
-      var mappedList = ddd.map((val) => {
-        let result = val + 1;
-        return result;
-      });
-      expect(mappedList).toEqual(2);
+      let ddd = new List();
+      ddd.push(1);
+      ddd.push(2);
+      ddd.push(3);
+      let mappedList = ddd.map((val) => val + 1);
+      expect(mappedList[0]).toEqual(2);
     });
   });
 
