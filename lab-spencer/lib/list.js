@@ -21,24 +21,16 @@ List.prototype.pop = function() {
 
 List.prototype.reduce = function(callback, initial) {
   if(!this.length) throw new Error('TypeError: Reduce of empty list with no initial value');
-  let i, accumulator;
-  if(initial) {
-    accumulator = initial;
-    i = 0;
-  } else {
-    accumulator = this[0];
-    i = 1;
-  }
+  let accumulator = initial || this[0];
+  let i = initial ? 0 : 1;
   for(i; i < this.length; i++)
     accumulator = callback(accumulator, this[i], i, this);
   return accumulator;
 };
 
 List.prototype.map = function(callback) {
-  let result = new List();
-  for(let i = 0; i < this.length; i++)
-    result.push(callback(this[i]));
-  return result;
+  if(!this.length) return this;
+  return this.reduce((acc, cur) => acc.push(callback(cur)) ? acc : null, new List());
 };
 
 List.prototype.filter = function(callback) {
