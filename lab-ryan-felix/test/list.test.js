@@ -82,6 +82,12 @@ describe('List', () => {
     const result3 = test.slice(1,3);
     expect(result3.length).toEqual(2);
     expect(result3[0]).toEqual('e');
+    const result4 = test.slice(-1);
+    expect(result4.length).toEqual(1);
+    expect(result4[0]).toEqual('o');
+    const result5 = test.slice(0, -2);
+    expect(result5.length).toEqual(3);
+    expect(result5[0]).toEqual('h');
   });
 
 });

@@ -1,3 +1,5 @@
+'use strict';
+
 function List() {
   this.length = 0;
   return this;
@@ -20,26 +22,21 @@ List.prototype.pop = function() {
 
 List.prototype.reduce = function(callback, initialValue = null) {
   if(this.length < 1) {
-    return undefined;
+    return initialValue || undefined;
   }
-  let val;
-  if(initialValue) {
-    val = callback(initialValue, this[0]);
-  } else {
-    val = this[0];
+  let accum = initialValue || this[0];
+  for(let i = initialValue ? 0 : 1; i < this.length; i++) {
+    accum = callback(accum, this[i], i, this);
   }
-  for(let i = 1; i < this.length; i++) {
-    val = callback(val, this[i]);
-  }
-  return val;
+  return accum;
 };
 
 List.prototype.map = function(callback) {
   if(this.length < 1) {
     return new List();
   }
-  return this.reduce( (av, cv) => {
-    av.push(callback(cv));
+  return this.reduce( (av, cv, idx, arr) => {
+    av.push(callback(cv, idx, arr));
     return av;
   }, new List() );
 };
@@ -48,8 +45,8 @@ List.prototype.filter = function(callback) {
   if(this.length < 1) {
     return new List();
   }
-  return this.reduce( (av, cv) => {
-    if(callback(cv)) {
+  return this.reduce( (av, cv, idx, arr) => {
+    if(callback(cv, idx, arr)) {
       av.push(cv);
     }
     return av;
@@ -58,8 +55,17 @@ List.prototype.filter = function(callback) {
 
 List.prototype.slice = function(begin = 0, end = this.length) {
   let list = new List();
-  for(let i = begin; i < end; i++) {
-    list.push(this[i]);
+  if(end < 0) {
+    end = this.length + end;
+  }
+  if(begin >= 0) {
+    for(let i = begin; i < end; i++) {
+      list.push(this[i]);
+    }
+  } else { // begin < 0
+    for(let i = this.length + begin; i < end; i++) {
+      list.push(this[i]);
+    }
   }
   return list;
 };
