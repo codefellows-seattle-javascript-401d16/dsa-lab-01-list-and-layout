@@ -65,3 +65,15 @@ describe('test filter', () => {
     expect(filterGreaterThan4).toEqual({2: 6, length: 1});
   });
 });
+
+//start of reduce testing
+describe('test reduce', () => {
+  it('it should return 6', () => {
+    let list = new List();
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    let addValues = list.reduce((acc, cur) => acc + cur);
+    expect(addValues).toEqual(6);
+  });
+});

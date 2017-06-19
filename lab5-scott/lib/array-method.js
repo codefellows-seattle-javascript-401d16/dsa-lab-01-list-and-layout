@@ -37,6 +37,6 @@ List.prototype.filter = function(callback){
   return result;
 };
 
-List.prototype.reduce = function(){
-  
-}
+List.prototype.reduce = function(callback){
+// need to build an accumulator that holds the callback function of adding the previous index number to the current one. Also an conditional statement in case there is nothing in the array to start with. 
+};
