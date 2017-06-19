@@ -7,7 +7,7 @@ describe('testing list', () => {
   it('should have a lenth of zero', () => {
     let list = new List()
     expect(list.length).toEqual(0);
-  });
+  })
 
   describe('testing push', () => {
     it('should append a value to the list', () => {
@@ -20,7 +20,7 @@ describe('testing list', () => {
       list.push('booyeah');
       expect(list[1]).toEqual('booyeah');
       expect(list.length).toEqual(2);
-    });
+    })
   });
 
   describe('test pop', () => {
@@ -42,7 +42,7 @@ describe('testing list', () => {
     })
 });
 
-describ('test map', () => {
+describe('test map', () => {
   it('should return all values in array', () => {
     let list = new List();
     list.push(1)
@@ -54,6 +54,6 @@ describ('test map', () => {
 
     list = new List();
     result = list.map();
-    expect(result).toBe(undefined);
-  });
-});
+    expect(result).toBe(null);
+  })
+})
