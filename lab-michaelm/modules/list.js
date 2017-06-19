@@ -18,20 +18,25 @@ List.prototype.pop = function() {
 };
 
 List.prototype.map = function(value) {
-  console.log('this before:\n',this);
   let newList = new List();
-  for (let i = 0; i < this.length; i++) () => newList.push(value(this[i]));
-  console.log('newList:\n',newList);
+  for (var i = 0; i < this.length; i++) () => newList.push(value(this[i]));
   return newList;
 };
-//
-// List.prototype.filter = function(value) {
-//
-// };
-//
-// List.prototype.reduce = function(value) {
-//
-// };
+
+List.prototype.filter = function(value) {
+  let newList = new List();
+  for (var i = 0; i < this.length; i++) if(value(this[i])) newList.push(value(this[i]));
+  return newList;
+};
+
+List.prototype.reduce = function(value, initialVal) {
+  let newList = new List();
+  let acc = 0;
+  if(initialVal) acc = initialVal;
+  for (var i = 0; i < this.length; i++) acc = value(acc, this[i]);
+  newList.push(acc);
+  return newList;
+};
 //
 // List.prototype.slice = function(value) {
 //
