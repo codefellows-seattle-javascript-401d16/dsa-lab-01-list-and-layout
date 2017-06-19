@@ -21,7 +21,8 @@ List.prototype.pop = function(){
 
 List.prototype.reduce = function(callback, initialValue){
   let acc = initialValue === undefined ? this[0]: initialValue + this[0];
-  for (let i = 1 ; i < this.length; i++) {
+  let i = initialValue === undefined ? 0 : 1;
+  for (i; i < this.length; i++) {
     acc = callback(acc, this[i]);
   }
   return acc;
