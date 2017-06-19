@@ -39,7 +39,10 @@ List.prototype.slice = (start, end) =>
 
 List.prototype.filter = (callback) =>
   this.reduce((a, b) => {
+    if (callback(b) == undefined)
+      return a;
     return a.push(callback(b));
+
   }, []);
 
 
