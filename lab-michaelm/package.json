@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "server": "index.js 3000"
   },
   "keywords": [],
   "author": "mdm_8@hotmail.com",
