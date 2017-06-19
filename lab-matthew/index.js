@@ -10,7 +10,7 @@ let createList = () => {
   return list;
 };
 
-console.log('Instantiate new List using push:', createList());
+console.log('List (new array-like object instance, populated with push:', createList());
 console.log('Pop:', createList().pop());
 console.log('Map:', createList().map(item => item.toUpperCase()));
 console.log('Filter:', createList().filter(item => item.length < 6));
