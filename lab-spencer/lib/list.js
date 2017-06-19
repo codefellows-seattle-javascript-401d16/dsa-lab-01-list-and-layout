@@ -30,7 +30,7 @@ List.prototype.reduce = function(callback, initial) {
     i = 1;
   }
   for(i; i < this.length; i++)
-    accumulator = callback(accumulator, this[i], i);
+    accumulator = callback(accumulator, this[i], i, this);
   return accumulator;
 };
 
