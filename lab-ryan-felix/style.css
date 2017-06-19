@@ -1,0 +1,55 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  padding: 5px;
+}
+
+div, header, footer {
+  border: 1px solid red;
+}
+
+.top-header {
+  height: 10%;
+  float: left;
+}
+
+.main {
+  float: left;
+  height: 80%;
+}
+
+.col-1-2 {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.half-height {
+  height: 50%;
+  width: 100%;
+  float: right;
+}
+
+.footer-thirds {
+  height: 10%;
+  float: left
+}
+
+.footer-thirds > div {
+  width: calc(100% / 3);
+  float: left;
+  height: 100%;
+}
