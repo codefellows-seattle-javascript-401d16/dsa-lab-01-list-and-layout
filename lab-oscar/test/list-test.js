@@ -42,22 +42,20 @@ describe('testing list', () => {
       expect(list.length).toEqual(0);
     })
   });
-  // describe('test slice', ()=>{
-  //   it('should return a new array with selected index as its values', () =>{
-  //     // let newarr = [];
-  //     // let myarr = [1, 2, 3, 4];
-  //
-  //     let list = new List();
-  //     list.push(1);
-  //     list.push(2);
-  //     list.push(3);
-  //     list.push(4);
-  //
-  //     let slice = list.slice(1,3);
-  //     console.log(slice);
-  //     expect(slice).toEqual([2,3]);
-  //   })
-  // })
+  describe('test slice', ()=>{
+    it('should return a new array with selected index as its values', () =>{
+
+      let list = new List();
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(4);
+
+      let slice = list.slice(1,3);
+      console.log(slice);
+      expect(slice[1]).toEqual(3);
+    })
+  })
 
   describe('test reduce', ()=>{
     it('should return 6', ()=>{

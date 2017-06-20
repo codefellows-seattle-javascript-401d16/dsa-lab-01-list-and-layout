@@ -20,6 +20,20 @@ List.prototype.pop = function(){
 List.prototype.map = function(callback){
 } // => List
 
+List.prototype.slice = function(begin, end){
+  if(this.length < 1) return
+
+  let begining, ending;
+  (!begin)? begining = 0 : begining = begin;
+  (!end) ? ending = this.lenght : end -1;
+
+  let result = new List();
+  for(var i = begining; i < end; i++){
+    result.push(this[i])
+  }
+  return result;
+}
+
 List.prototype.reduce = function(callback, initValue) {
   let result, initialValue, array;
 
