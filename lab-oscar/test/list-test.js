@@ -51,9 +51,9 @@ describe('testing list', () => {
       list.push(3);
       list.push(4);
 
-      let slice = list.slice(1,3);
+      let slice = list.slice();
       console.log(slice);
-      expect(slice[1]).toEqual(3);
+      expect(slice[1]).toEqual(2);
     })
   })
 

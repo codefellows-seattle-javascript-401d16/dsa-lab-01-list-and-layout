@@ -25,10 +25,10 @@ List.prototype.slice = function(begin, end){
 
   let begining, ending;
   (!begin)? begining = 0 : begining = begin;
-  (!end) ? ending = this.lenght : end -1;
+  (!end) ? ending = this.length : end -1;
 
   let result = new List();
-  for(var i = begining; i < end; i++){
+  for(var i = begining; i < ending; i++){
     result.push(this[i])
   }
   return result;
