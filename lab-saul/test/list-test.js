@@ -1,54 +1,55 @@
-'use strict';
+const List = require('../lib/list.js')
+const expect = require('expect')
 
-const expect = require('expect');
-const List = require('../lib/list.js');
+let list = new List();
 
-describe('testing list', () => {
-  it('should have a length of zero', () => {
-    let list = new List()
-    expect(list.length).toEqual(0);
+list[0] = 1;
+list[1] = 2;
+list[2] = 3;
+list.length = 3;
+
+console.log(list)
+
+describe('testing map method', () => {
+  it('should return array with values incrimented by 1', () => {
+    let result = list.map(n => n + 1);
+    expect(result).toEqual([2, 3, 4]);
   });
-
-  describe('testing push', () => {
-    it('should append a value to the list', () => {
-      let list = new List();
-
-      list.push('hi');
-      expect(list[0]).toEqual('hi');
-      expect(list.length).toEqual(1);
-
-      list.push('hello');
-      expect(list[1]).toEqual('hello');
-      expect(list.length).toEqual(2);
-    });
+  it('should return array with values doubled', () => {
+    let result = list.map(n => n * 2);
+    expect(result).toEqual([2, 4, 6]);
   });
+});
 
-  describe('test pop', () => {
-    it('should remove a value', () => {
-      let list = new List();
-      list.push(1)
-      list.push(2)
-      list.push(3)
-
-      let result = list.pop();
-      expect(result).toEqual(3);
-      expect(list.length).toEqual(2);
-      expect(list[2]).toBe(undefined);
-
-      list = new List();
-      result = list.pop();
-      expect(result).toEqual(undefined);
-      expect(list.length).toEqual(0);
-    })
-
-
+describe('testing filter method', () => {
+  it('should return array with only even values', () => {
+    let result = list.filter(n => n % 2 === 0);
+    expect(result).toEqual([2]);
   });
+  it('should return values less than 2', () => {
+    let result = list.filter(n => n < 2);
+    expect(result).toEqual([1]);
+  });
+});
 
-//   describe('test map', () => {
-//     it('should return an altered version of the input', () =>{
-//       let list = new List();
-//       let callback = ;
-//       let
-//     })
-//   });
-// });
+describe('testing reduce method', () => {
+  it('should return array of values summed', () => {
+    let result = list.reduce((a, b) => a + b, 0);
+    expect(result).toEqual(6);
+  });
+  it('should return the highest number', () => {
+    let result = list.reduce((a, b) => b > a ? b : a, -Infinity);
+    expect(result).toEqual(3);
+  });
+});
+
+describe('testing slice method', () => {
+  it('should return subset array from index 1 to the end of the array', () => {
+    let result = list.slice(1);
+    expect(result).toEqual([2, 3]);
+  });
+  it('should return subset array of only index 1', () => {
+    let result = list.slice(1, 2);
+    expect(result).toEqual([2]);
+  });
+});
