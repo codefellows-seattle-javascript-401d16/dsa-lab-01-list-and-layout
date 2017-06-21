@@ -52,8 +52,21 @@ describe('testing list', () => {
       list.push(4);
 
       let slice = list.slice();
-      console.log(slice);
       expect(slice[1]).toEqual(2);
+    })
+  })
+
+  describe('test filter', ()=>{
+    it('should return [3,3]', ()=>{
+      let list = new List();
+      list.push(3);
+      list.push(3);
+      list.push(2);
+
+      let filter = list.filter((n)=>{
+        return n > 2;
+      })
+      expect(filter[0] + filter[1]).toEqual(6);
     })
   })
 

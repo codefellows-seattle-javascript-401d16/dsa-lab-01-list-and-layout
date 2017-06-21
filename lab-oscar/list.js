@@ -20,6 +20,13 @@ List.prototype.pop = function(){
 List.prototype.map = function(callback){
 } // => List
 
+List.prototype.filter = function(callback){
+  let result = new List();
+  for(var i = 0; i < this.length; i++){
+    if(callback(this[i])) { result.push(this[i]);}
+  }
+  return result;
+}
 List.prototype.slice = function(begin, end){
   if(this.length < 1) return
 
