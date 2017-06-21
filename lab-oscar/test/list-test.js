@@ -56,6 +56,20 @@ describe('testing list', () => {
     })
   })
 
+  describe('test map', () =>{
+    it('should return new array with values double', ()=>{
+      let list = new List();
+      list.push(1);
+      list.push(2);
+      list.push(3);
+
+      let map = list.map((n)=>{
+        return n * 2;
+      })
+      expect(map[2]).toEqual(6);
+    })
+  })
+
   describe('test filter', ()=>{
     it('should return [3,3]', ()=>{
       let list = new List();

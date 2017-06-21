@@ -18,6 +18,11 @@ List.prototype.pop = function(){
 }
 
 List.prototype.map = function(callback){
+  let result = new List();
+  for(var i = 0; i < this.length; i++){
+    if(callback(this[i])){ result.push(callback(this[i]))}
+  }
+  return result;
 } // => List
 
 List.prototype.filter = function(callback){
