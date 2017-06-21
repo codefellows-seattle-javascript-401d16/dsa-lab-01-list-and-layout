@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('expect');
-const List = require('./list.js');
+const List = require('../list.js');
 
 describe('testing list', () => {
   it('should have a lenth of zero', () => {

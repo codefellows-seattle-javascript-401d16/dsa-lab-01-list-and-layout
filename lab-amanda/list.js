@@ -33,20 +33,19 @@ List.prototype.slice = function(arg, args) {
 
 List.prototype.filter = function(arg) {
   let result = [];
-  for (i=0; i<this.length; i++) {
+  for (let i=0; i<this.length; i++) {
     if(arg ==this[i])
       result.push(this[i]);
   } return result;
 };
 
-List.prototype.reduce  = function( callback, val) {
-  let i = result;
+List.prototype.reduce = function(callback, val) {
+  let i = 0;
   if (val) {
-    let i = val;
-  } else {
-    i = 0;
+    i = val;
   }
-  for (i; i < this.length; i++)
-    result = callback(result, this[i]);
-  } return result;
+  for (i = i ; i < this.length; i++) {
+    let result = callback(result, this[i]);
+    return result;
+  }
 };
