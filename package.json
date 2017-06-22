@@ -1,0 +1,25 @@
+{
+  "name": "lab1-dsa-Zach",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) dsa-lab-01-list-and-layout\r ======\r ## To Submit this Assignment\r #### UI Challenge\r * create a codepen and submit a link",
+  "main": "list.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zdiehlio/dsa-lab-01-list-and-layout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zdiehlio/dsa-lab-01-list-and-layout/issues"
+  },
+  "homepage": "https://github.com/zdiehlio/dsa-lab-01-list-and-layout#readme",
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.4.2"
+  }
+}
