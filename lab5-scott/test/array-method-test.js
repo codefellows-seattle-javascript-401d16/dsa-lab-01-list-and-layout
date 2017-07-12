@@ -44,13 +44,15 @@ describe('testing array-method module', () => {
 
 // start of map testing
 describe('test map', () => {
-  it('it should return {0: 2, 1: 4, 2: 6}', () => {
+  it('it should return double the orig # at each index', () => {
     let list = new List();
     list.push(1);
     list.push(2);
     list.push(3);
     let multiplyByTwo = list.map(item => item * 2);
-    expect(multiplyByTwo).toEqual({0: 2, 1: 4, 2: 6, length: 3});
+    expect(multiplyByTwo[0]).toEqual(2);
+    expect(multiplyByTwo[1]).toEqual(4);
+    expect(multiplyByTwo[2]).toEqual(6);
   });
 });
 
