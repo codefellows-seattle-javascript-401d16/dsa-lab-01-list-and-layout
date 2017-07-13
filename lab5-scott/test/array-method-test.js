@@ -58,13 +58,16 @@ describe('test map', () => {
 
 //start of filter testing
 describe('test filter', () => {
-  it('it should return {2: 6, length: 1}', () => {
+  it('it should return 4 and 5 in the list', () => {
     let list = new List();
     list.push(1);
     list.push(2);
     list.push(3);
-    let filterGreaterThan4 = list.filter(item => item < 4);
-    expect(filterGreaterThan4).toEqual({2: 6, length: 1});
+    list.push(4);
+    list.push(5);
+    let filterGreaterThan4 = list.filter(item => item >= 4);
+    expect(filterGreaterThan4[0]).toEqual(4);
+    expect(filterGreaterThan4[1]).toEqual(5);
   });
 });
 
