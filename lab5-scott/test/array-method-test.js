@@ -79,6 +79,6 @@ describe('test reduce', () => {
     list.push(2);
     list.push(3);
     let addValues = list.reduce((acc, cur) => acc + cur);
-    expect(addValues).toEqual(6);
+    expect(addValues[0]).toEqual(6);
   });
 });

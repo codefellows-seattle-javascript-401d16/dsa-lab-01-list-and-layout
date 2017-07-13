@@ -35,9 +35,9 @@ List.prototype.filter = function(callback){
   return result;
 };
 
-List.prototype.reduce = function(initial, callback){
+List.prototype.reduce = function(callback, initial){
   let result = new List();
-  let acc;
+  let acc = 0;
   //if there's any initial value, set that to the accumulator
   if (initial) acc = initial;
   //loop through the length of this and set the acc to the result of the cb which takes in the current value of this[i] and the acc.
