@@ -35,6 +35,16 @@ List.prototype.filter = function(callback){
   return result;
 };
 
-List.prototype.reduce = function(callback){
-// need to build an accumulator that holds the callback function of adding the previous index number to the current one. Also an conditional statement in case there is nothing in the array to start with.
+List.prototype.reduce = function(initial, callback){
+  let result = new List();
+  let acc;
+  //if there's any initial value, set that to the accumulator
+  if (initial) acc = initial;
+  //loop through the length of this and set the acc to the result of the cb which takes in the current value of this[i] and the acc.
+  for (var i = 0; i < this.length; i ++){
+    acc = callback(acc, this[i]);
+  }
+  //push the acc in to the list called result and return it
+  result.push(acc);
+  return result;
 };
