@@ -44,10 +44,10 @@ describe('testing list', () => {
 
   describe('testing map', () => {
     let divide = function(x) {
-      return x/2;
+      return x / 2;
     };
     let multiply = function(x) {
-      return x*5;
+      return x * 5;
     };
 
     it('should return an array with a function performed on it', () => {
@@ -57,25 +57,22 @@ describe('testing list', () => {
       list.push(6);
 
       let result = list.map(divide);
-      expect(result).toEqual([1,2,3]);
+      expect(result).toEqual([1, 2, 3]);
 
       result = list.map(multiply);
-      expect(result).toEqual([10,20,30]);
+      expect(result).toEqual([10, 20, 30]);
     });
   });
 
   describe('testing reduce', () => {
-    let sum = function(a,b) {
-      return a+b;
-    };
-
-    it('should return reduced list filtered by input', () => {
+    it('should return 12', () => {
       let list = new List();
+
       list.push(2);
       list.push(4);
       list.push(6);
-
-      expect(list.reduce(sum)).toEqual(12);
+      let result = list.reduce((a, c) => a + c);
+      expect(result).toEqual(12);
     });
   });
 
@@ -87,24 +84,19 @@ describe('testing list', () => {
       list.push(4);
       list.push(5);
       list.push(6);
-      expect(list.slice(1,4)).toEqual([3,4,5]);
+      console.log('LIST', list);
+      expect(list.slice(1, 4)).toEqual([3, 4, 5]);
     });
   });
-
 
   describe('testing filter', () => {
     it('should return an array that passes the callback', () => {
       let greaterThanTwo = function(x) {
         return x > 2;
       };
-      let list = new List();
-      list.push(2);
-      list.push(3);
-      list.push(4);
-      list.push(5);
-      list.push(6);
+      let list = [2, 3, 4, 5, 6];
 
-      console.log('list', list.filters(greaterThanTwo));
+      console.log('LIST', list);
       expect(list.filter(greaterThanTwo)).toEqual([3, 4, 5, 6]);
     });
   });
