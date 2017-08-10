@@ -42,4 +42,58 @@ describe('testing list', () => {
     });
   });
 
+  describe('test reduce', () => {
+    it('should reduce an array to one value', () => {
+      let list = [1,2,3];
+      let result = list.reduce((acc, val) => acc + val);
+      expect(result).toEqual(6);
+      expect(result.length).toBe(undefined);
+
+      list = ['apple','pear','orange'];
+      result = list.reduce((acc, val) => acc + val,10);
+      expect(result).toEqual('10applepearorange');
+      expect(result.length).toBe(17);
+    });
+  });
+
+  describe('test map', () => {
+    it('should return an altered array', () => {
+      let list = [1,2,3];
+      let result = list.map((x) => x * 2);
+      expect(result).toEqual([2, 4, 6]);
+      expect(result.length).toBe(3);
+
+      list = ['apple','pear','orange'];
+      result = list.map((x)=>x.split('').reverse().join(''));
+      expect(result).toEqual(['elppa', 'raep', 'egnaro']);
+    });
+  });
+
+  describe('test filter', () => {
+    it('should return a filtered array', () => {
+      let list = [1,2,3];
+      let result = list.filter((x) => x > 1);
+      expect(result).toEqual([2, 3]);
+      expect(result.length).toBe(2);
+
+      list = ['apple','pear','bananna'];
+      result = list.filter((x)=> x.length > 6);
+      expect(result).toEqual(['bananna']);
+      expect(result.length).toBe(1);
+    });
+  });
+
+  describe('test slice', () => {
+    it('should return a filtered array', () => {
+      let list = [1,2,3,4,5];
+      let result = list.slice(1,4);
+      expect(result).toEqual([2,3,4]);
+      expect(result.length).toBe(3);
+
+      list = ['apple','pear','orange','bananna'];
+      result = list.slice(2);
+      expect(result).toEqual(['orange', 'bananna']);
+      expect(result.length).toBe(2);
+    });
+  });
 });
